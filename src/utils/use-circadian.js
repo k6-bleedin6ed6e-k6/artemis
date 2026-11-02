@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { PHASES, getPhase } from './circadian-phases'
 
 const REENTRY_HOURS = 4
-const STORAGE_KEY = 'athena_last_open'
+const STORAGE_KEY = 'artemis_last_open'
 
 function checkReEntry() {
   const last = localStorage.getItem(STORAGE_KEY)

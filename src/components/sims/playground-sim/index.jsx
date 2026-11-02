@@ -75,7 +75,7 @@ export default function PlaygroundSim({ onClose, simContext, onSimContext, onOpe
           const { Component } = sim
           return (
             <div key={id} className="pg__sim-wrap" style={{ zIndex: 10 + i }}>
-              <Component onClose={() => closeSim(id)} onAthenaEvent={NOOP} simContext={simContext} onSimContext={onSimContext} onOpenApp={onOpenApp} />
+              <Component onClose={() => closeSim(id)} onArtemisEvent={NOOP} simContext={simContext} onSimContext={onSimContext} onOpenApp={onOpenApp} />
             </div>
           )
         })}

@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { LESSONS, WEEKS } from './lessons'
 
-const STORAGE_KEY = 'athena-progress'
+const STORAGE_KEY = 'artemis-progress'
 
 const BADGE_RULES = [
   { badge: 'first-click', lessonId: 'mouse-basics' },

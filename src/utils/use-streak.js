@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-const KEY_COUNT = 'athena_streak_count'
-const KEY_DATE  = 'athena_streak_date'
+const KEY_COUNT = 'artemis_streak_count'
+const KEY_DATE  = 'artemis_streak_date'
 
 export function useStreak() {
   const [streak] = useState(() => {

@@ -13,7 +13,7 @@
 .pt__bar {
   width: 64px;
   height: 4px;
-  background: var(--athena-gold-dim);
+  background: var(--artemis-gold-dim);
   border-radius: 2px;
   overflow: hidden;
   flex-shrink: 0;
@@ -21,7 +21,7 @@
 
 .pt__fill {
   height: 100%;
-  background: var(--athena-gold);
+  background: var(--artemis-gold);
   border-radius: 2px;
   transition: width 0.4s ease;
 }
@@ -40,14 +40,14 @@
 }
 
 .pt__xp--flash {
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
 }
 
 .pt__xp-floater {
   position: absolute;
   left: 0;
   bottom: 0;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 11px;
   font-weight: 700;
   pointer-events: none;
@@ -64,8 +64,8 @@
 .pt__share {
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-text-secondary);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-text-secondary);
   font-size: 11px;
   font-family: inherit;
   padding: 3px 10px;
@@ -74,12 +74,12 @@
   transition: color 0.15s, border-color 0.15s;
 }
 .pt__share:hover {
-  border-color: var(--athena-gold-border);
-  color: var(--athena-gold);
+  border-color: var(--artemis-gold-border);
+  color: var(--artemis-gold);
 }
 .pt__share--copied {
-  color: var(--athena-green);
-  border-color: var(--athena-green);
+  color: var(--artemis-green);
+  border-color: var(--artemis-green);
 }
 .pt__share--failed {
   color: rgba(255, 100, 100, 0.7);

@@ -32,7 +32,7 @@ const INBOX = [
   },
 ]
 
-export default function EmailSim({ onClose, onAthenaEvent, simContext, onSimContext }) {
+export default function EmailSim({ onClose, onArtemisEvent, simContext, onSimContext }) {
   const [emails, setEmails]     = useState(INBOX)
   const [selected, setSelected] = useState(null)
   const [view, setView]         = useState('inbox') // 'inbox' | 'compose' | 'reply'
@@ -42,13 +42,13 @@ export default function EmailSim({ onClose, onAthenaEvent, simContext, onSimCont
   const [fired, setFired]       = useState(new Set())
 
   function fire(event) {
-    onAthenaEvent?.({ lesson: 'email', event })
+    onArtemisEvent?.({ lesson: 'email', event })
     setFired(prev => {
       const next = new Set(prev)
       next.add(event)
       if (['sent-email', 'replied'].every(e => next.has(e)) && !prev.has('lesson-complete')) {
         next.add('lesson-complete')
-        setTimeout(() => onAthenaEvent?.({ lesson: 'email', event: 'lesson-complete' }), 600)
+        setTimeout(() => onArtemisEvent?.({ lesson: 'email', event: 'lesson-complete' }), 600)
       }
       return next
     })

@@ -1,5 +1,5 @@
 .lp {
-  border-top: 1px solid var(--athena-gold-border);
+  border-top: 1px solid var(--artemis-gold-border);
   padding: 10px 0 12px;
   overflow-y: auto;
   flex: 1;
@@ -11,7 +11,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   padding: 0 14px 6px;
   margin: 0;
 }
@@ -30,7 +30,7 @@
 
 .lp__week-label {
   font-size: 10px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   opacity: 0.5;
   white-space: nowrap;
   flex-shrink: 0;
@@ -39,7 +39,7 @@
 .lp__week-rule {
   flex: 1;
   height: 1px;
-  background: var(--athena-gold-border);
+  background: var(--artemis-gold-border);
 }
 
 /* Lesson row */
@@ -62,7 +62,7 @@
 }
 
 .lp__row--active:hover {
-  background: var(--athena-gold-dim);
+  background: var(--artemis-gold-dim);
 }
 
 .lp__row:disabled {
@@ -78,11 +78,11 @@
 }
 
 .lp__dot--complete {
-  background: var(--athena-gold);
+  background: var(--artemis-gold);
 }
 
 .lp__dot--active {
-  background: var(--athena-green);
+  background: var(--artemis-green);
   box-shadow: 0 0 0 0 rgba(29, 158, 117, 0.6);
   animation: lp-pulse 2s ease-out infinite;
 }
@@ -138,7 +138,7 @@
 .lp__bar-track {
   display: block;
   height: 3px;
-  background: var(--athena-bg-base);
+  background: var(--artemis-bg-base);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -146,7 +146,7 @@
 .lp__bar-fill {
   display: block;
   height: 100%;
-  background: var(--athena-green);
+  background: var(--artemis-green);
   border-radius: 2px;
   transition: width 0.4s ease;
 }
@@ -160,7 +160,7 @@
 }
 
 .lp__check {
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
 }
 
 .lp__lock {

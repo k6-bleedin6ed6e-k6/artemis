@@ -21,7 +21,7 @@ function buildSummary({ completedLessons, earnedBadges, totalXP, currentWeek }) 
 
   return [
     '─────────────────────',
-    'athena progress report',
+    'artemis progress report',
     dateStr,
     '─────────────────────',
     `week ${currentWeek} of ${totalWeeks}`,

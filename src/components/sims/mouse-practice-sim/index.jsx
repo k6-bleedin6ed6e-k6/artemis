@@ -22,7 +22,7 @@ const STEPS = [
   },
 ]
 
-export default function MousePracticeSim({ onClose, onAthenaEvent }) {
+export default function MousePracticeSim({ onClose, onArtemisEvent }) {
   const [done, setDone] = useState(new Set())
   const [contextVisible, setContextVisible] = useState(false)
   const firedRef = useRef(new Set())
@@ -33,9 +33,9 @@ export default function MousePracticeSim({ onClose, onAthenaEvent }) {
     const next = new Set(done)
     next.add(event)
     setDone(next)
-    onAthenaEvent?.({ lesson: 'mouse-basics', event })
+    onArtemisEvent?.({ lesson: 'mouse-basics', event })
     if (next.size === 3) {
-      setTimeout(() => onAthenaEvent?.({ lesson: 'mouse-basics', event: 'lesson-complete' }), 900)
+      setTimeout(() => onArtemisEvent?.({ lesson: 'mouse-basics', event: 'lesson-complete' }), 900)
     }
   }
 

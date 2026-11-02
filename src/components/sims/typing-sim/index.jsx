@@ -101,9 +101,9 @@ function Keyboard({ nextChar }) {
 
 // ── Main component ───────────────────────────────────────────────────────────
 
-const PB_KEY = 'athena_typing_best'
+const PB_KEY = 'artemis_typing_best'
 
-export default function TypingSim({ onClose, onAthenaEvent }) {
+export default function TypingSim({ onClose, onArtemisEvent }) {
   const [sentenceIdx, setSentenceIdx] = useState(0)
   const [typed, setTyped]             = useState('')
   const [wpmHistory, setWpmHistory]   = useState([])
@@ -152,7 +152,7 @@ export default function TypingSim({ onClose, onAthenaEvent }) {
   function fire(event) {
     if (firedRef.current.has(event)) return
     firedRef.current.add(event)
-    onAthenaEvent?.({ lesson: 'keyboard-basics', event })
+    onArtemisEvent?.({ lesson: 'keyboard-basics', event })
   }
 
   function handleInput(e) {

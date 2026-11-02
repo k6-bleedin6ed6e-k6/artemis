@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import './doc-editor-sim.css'
 
-export default function DocEditorSim({ onClose, onAthenaEvent }) {
+export default function DocEditorSim({ onClose, onArtemisEvent }) {
   const [filename, setFilename]   = useState('')
   const [wordCount, setWordCount] = useState(0)
   const [isBold, setIsBold]       = useState(false)
@@ -12,14 +12,14 @@ export default function DocEditorSim({ onClose, onAthenaEvent }) {
   const editorRef = useRef(null)
 
   function fire(event) {
-    onAthenaEvent?.({ lesson: 'doc-editor', event })
+    onArtemisEvent?.({ lesson: 'doc-editor', event })
     setFired(prev => {
       const next = new Set(prev)
       next.add(event)
       const all = ['started-typing', 'used-bold', 'saved-doc', 'named-doc']
       if (all.every(e => next.has(e)) && !prev.has('lesson-complete')) {
         next.add('lesson-complete')
-        setTimeout(() => onAthenaEvent?.({ lesson: 'doc-editor', event: 'lesson-complete' }), 600)
+        setTimeout(() => onArtemisEvent?.({ lesson: 'doc-editor', event: 'lesson-complete' }), 600)
       }
       return next
     })
@@ -36,7 +36,7 @@ export default function DocEditorSim({ onClose, onAthenaEvent }) {
       if (!prev.has('started-typing')) {
         const next = new Set(prev)
         next.add('started-typing')
-        onAthenaEvent?.({ lesson: 'doc-editor', event: 'started-typing' })
+        onArtemisEvent?.({ lesson: 'doc-editor', event: 'started-typing' })
         return next
       }
       return prev
@@ -52,7 +52,7 @@ export default function DocEditorSim({ onClose, onAthenaEvent }) {
         if (!prev.has('used-bold')) {
           const next = new Set(prev)
           next.add('used-bold')
-          onAthenaEvent?.({ lesson: 'doc-editor', event: 'used-bold' })
+          onArtemisEvent?.({ lesson: 'doc-editor', event: 'used-bold' })
           return next
         }
         return prev

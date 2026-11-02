@@ -15,7 +15,7 @@ const STEPS = [
   { id: 'save',       label: 'Save',        hint: 'Save the document',            keys: ['Ctrl', 'S'], event: 'used-save'       },
 ]
 
-export default function ShortcutsSim({ onClose, onAthenaEvent }) {
+export default function ShortcutsSim({ onClose, onArtemisEvent }) {
   const [step, setStep]       = useState(0)
   const [done, setDone]       = useState([])
   const [flash, setFlash]     = useState(false)
@@ -27,7 +27,7 @@ export default function ShortcutsSim({ onClose, onAthenaEvent }) {
   function fire(event) {
     if (firedRef.current.has(event)) return
     firedRef.current.add(event)
-    onAthenaEvent?.({ lesson: 'shortcuts', event })
+    onArtemisEvent?.({ lesson: 'shortcuts', event })
   }
 
   function advance(event) {

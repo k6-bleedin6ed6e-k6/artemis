@@ -1,4 +1,4 @@
-export const athenaResponses = {
+export const artemisResponses = {
   'circadian': {
     'circadian-ocean': [
       "Good morning! A fresh start — the best kind. Pick a lesson on the left whenever you're ready.",
@@ -410,7 +410,7 @@ export const athenaResponses = {
 
   _global: {
     'direct-question': [
-      "Hi! I'm Athena — pick any lesson from the panel on the left and I'll guide you through it step by step.",
+      "Hi! I'm Artemis — pick any lesson from the panel on the left and I'll guide you through it step by step.",
       "Great question! Start with any lesson on the left panel and I'll walk you through everything. What would you like to work on?",
       "Hello! Choose a lesson from the left side whenever you're ready — I'll explain each step as you go.",
     ],
@@ -431,7 +431,7 @@ export const athenaResponses = {
     ],
     'session-start': [
       "Welcome back! Ready to keep building your skills? Let's do this.",
-      "Great to see you! Pick up right where you left off — Athena's here with you.",
+      "Great to see you! Pick up right where you left off — Artemis's here with you.",
       "Hello! Today is a great day to learn something new. Let's get started."
     ],
     'session-end': [

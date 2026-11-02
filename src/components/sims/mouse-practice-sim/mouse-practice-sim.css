@@ -1,15 +1,15 @@
 .mp {
   width: 100%;
   height: 100%;
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   font-family: inherit;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 .mp__titlebar {
@@ -18,8 +18,8 @@
   gap: 10px;
   padding: 0 12px;
   height: 36px;
-  background: var(--athena-bg-surface);
-  border-bottom: 1px solid var(--athena-gold-border);
+  background: var(--artemis-bg-surface);
+  border-bottom: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
 }
 .mp__dots { display: flex; gap: 6px; align-items: center; }
@@ -30,7 +30,7 @@
 .mp__dot--green  { background: #27c93f; }
 .mp__title {
   flex: 1; text-align: center;
-  font-size: 12px; color: var(--athena-text-secondary); user-select: none;
+  font-size: 12px; color: var(--artemis-text-secondary); user-select: none;
 }
 .mp__title-spacer { width: 66px; }
 
@@ -44,7 +44,7 @@
 .mp__intro {
   margin: 0;
   font-size: 13px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   line-height: 1.5;
 }
 
@@ -60,14 +60,14 @@
   justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
-  background: var(--athena-bg-surface);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius);
+  background: var(--artemis-bg-surface);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius);
   transition: border-color 0.2s, background 0.2s;
 }
 .mp__step--done {
-  border-color: var(--athena-gold);
-  background: var(--athena-gold-dim);
+  border-color: var(--artemis-gold);
+  background: var(--artemis-gold-dim);
 }
 
 .mp__step-info {
@@ -80,7 +80,7 @@
 
 .mp__step-check {
   font-size: 16px;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   flex-shrink: 0;
   width: 20px;
   text-align: center;
@@ -90,12 +90,12 @@
 .mp__step-label {
   font-size: 13px;
   font-weight: 600;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   line-height: 1.3;
 }
 .mp__step-hint {
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   margin-top: 2px;
   line-height: 1.4;
 }
@@ -103,10 +103,10 @@
 .mp__target {
   flex-shrink: 0;
   padding: 8px 16px;
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius);
-  color: var(--athena-gold);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius);
+  color: var(--artemis-gold);
   font-size: 12px;
   font-family: inherit;
   cursor: pointer;
@@ -114,9 +114,9 @@
   white-space: nowrap;
 }
 .mp__target:hover:not(:disabled) {
-  background: var(--athena-gold);
-  color: var(--athena-bg-base);
-  border-color: var(--athena-gold);
+  background: var(--artemis-gold);
+  color: var(--artemis-bg-base);
+  border-color: var(--artemis-gold);
 }
 .mp__target:disabled {
   opacity: 0.6;
@@ -132,9 +132,9 @@
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  background: var(--athena-bg-surface);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius);
+  background: var(--artemis-bg-surface);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius);
   box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   z-index: 10;
   min-width: 120px;
@@ -143,19 +143,19 @@
 .mp__context-item {
   padding: 7px 14px;
   font-size: 12px;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 .mp__context-item:hover {
-  background: var(--athena-gold-dim);
+  background: var(--artemis-gold-dim);
 }
 
 .mp__complete {
   padding: 12px 16px;
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold);
-  border-radius: var(--athena-radius);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold);
+  border-radius: var(--artemis-radius);
   font-size: 13px;
   font-weight: 600;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   text-align: center;
 }

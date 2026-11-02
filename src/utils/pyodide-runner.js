@@ -51,7 +51,7 @@ export async function runPython(code, onStatus) {
     const out = outLines.join('\n').trimEnd()
     const message = e?.message || String(e)
     const error = /emscripten does not support processes/i.test(message)
-      ? 'This code tried to start an operating-system process. Athena runs Python in your browser and cannot launch programs or shell commands. Save the code as a .py file and use a local Python environment or isolated lab with the required tools.'
+      ? 'This code tried to start an operating-system process. Artemis runs Python in your browser and cannot launch programs or shell commands. Save the code as a .py file and use a local Python environment or isolated lab with the required tools.'
       : message
     return { output: out, error }
   }

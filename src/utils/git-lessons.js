@@ -58,7 +58,7 @@ export function gitLogOutput(gs) {
   const out = []
   ;[...gs.commits].reverse().forEach((c, i) => {
     out.push(YLW(`commit ${c.hash}${i === 0 ? ` (HEAD -> ${gs.currentBranch || gs.branch}${gs.remote?.pushed ? ', origin/main' : ''})` : ''}`))
-    out.push(L('Author: Learner <learner@athena.study>'))
+    out.push(L('Author: Learner <learner@artemis.study>'))
     out.push(L(`Date:   ${c.date}`))
     out.push(BL())
     out.push(L(`    ${c.message}`))

@@ -1,4 +1,4 @@
-let _enabled = localStorage.getItem('athena_sound') === 'on'
+let _enabled = localStorage.getItem('artemis_sound') === 'on'
 let _ctx = null
 
 function ctx() {
@@ -26,7 +26,7 @@ export function isSoundEnabled() { return _enabled }
 
 export function setSoundEnabled(val) {
   _enabled = val
-  localStorage.setItem('athena_sound', val ? 'on' : 'off')
+  localStorage.setItem('artemis_sound', val ? 'on' : 'off')
 }
 
 export function playClick() {

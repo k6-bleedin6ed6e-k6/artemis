@@ -71,14 +71,14 @@
   align-items: center;
   gap: 12px;
   padding: 10px 20px;
-  background: var(--athena-bg-panel, #1e1e1e);
-  border-bottom: 1px solid var(--athena-gold-border, rgba(212, 175, 55, 0.3));
+  background: var(--artemis-bg-panel, #1e1e1e);
+  border-bottom: 1px solid var(--artemis-gold-border, rgba(212, 175, 55, 0.3));
   font-size: 13px;
 }
 
 .app__restore-banner-text {
   flex: 1;
-  color: var(--athena-gold, #d4af37);
+  color: var(--artemis-gold, #d4af37);
   font-weight: 600;
 }
 
@@ -100,8 +100,8 @@
 }
 
 .app__restore-banner-btn--primary {
-  background: var(--athena-gold, #d4af37);
-  border-color: var(--athena-gold, #d4af37);
+  background: var(--artemis-gold, #d4af37);
+  border-color: var(--artemis-gold, #d4af37);
   color: #111;
   font-weight: 700;
 }
@@ -123,7 +123,7 @@
   gap: 16px;
   padding: 10px 20px;
   background: #1a1700;
-  border-bottom: 1px solid var(--athena-gold, #d4af37);
+  border-bottom: 1px solid var(--artemis-gold, #d4af37);
 }
 .app__save-banner-body {
   flex: 1;
@@ -140,15 +140,15 @@
   font-family: monospace;
   font-size: 14px;
   font-weight: 700;
-  color: var(--athena-gold, #d4af37);
+  color: var(--artemis-gold, #d4af37);
   letter-spacing: 0.04em;
 }
 .app__save-banner-copy {
   padding: 3px 10px;
   border-radius: 4px;
-  border: 1px solid var(--athena-gold, #d4af37);
+  border: 1px solid var(--artemis-gold, #d4af37);
   background: transparent;
-  color: var(--athena-gold, #d4af37);
+  color: var(--artemis-gold, #d4af37);
   font-size: 11px;
   font-family: inherit;
   cursor: pointer;
@@ -174,7 +174,7 @@
 .app--standalone-bootcamp {
   min-height: 100vh;
   height: auto;
-  background: var(--athena-bg-base, #111);
+  background: var(--artemis-bg-base, #111);
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -182,13 +182,13 @@
 
 .app__standalone-bar {
   padding: 12px 18px;
-  background: var(--athena-bg-panel, #1e1e1e);
-  border-bottom: 1px solid var(--athena-gold-border, rgba(212, 175, 55, 0.25));
+  background: var(--artemis-bg-panel, #1e1e1e);
+  border-bottom: 1px solid var(--artemis-gold-border, rgba(212, 175, 55, 0.25));
   flex-shrink: 0;
 }
 
 .app__standalone-back {
-  color: var(--athena-gold, #d4af37);
+  color: var(--artemis-gold, #d4af37);
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
@@ -249,13 +249,13 @@ body :is(small, [class*="hint"], [class*="label"], [class*="caption"],
 /* Keep persistent prompts readable across the circadian palette. */
 .app__restore-banner-btn,
 .app__save-banner-dismiss {
-  border-color: var(--athena-gold-border);
-  background: var(--athena-bg-surface);
-  color: var(--athena-text-primary);
+  border-color: var(--artemis-gold-border);
+  background: var(--artemis-bg-surface);
+  color: var(--artemis-text-primary);
 }
 .app__save-banner {
-  background: var(--athena-bg-panel);
-  color: var(--athena-text-primary);
+  background: var(--artemis-bg-panel);
+  color: var(--artemis-text-primary);
 }
 .app__save-banner-label,
-.app__save-banner-hint { color: var(--athena-text-secondary); }
+.app__save-banner-hint { color: var(--artemis-text-secondary); }

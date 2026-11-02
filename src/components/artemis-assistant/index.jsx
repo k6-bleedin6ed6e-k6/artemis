@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import useAthena from '../../utils/use-athena'
-import './athena-assistant.css'
+import useArtemis from '../../utils/use-artemis'
+import './artemis-assistant.css'
 
 const WELCOME = {
   id: crypto.randomUUID(),
-  type: 'athena',
-  text: "Perfect — you're here! I'm Athena, and I'll be with you every step of the way. Click anything to get started!",
+  type: 'artemis',
+  text: "Perfect — you're here! I'm Artemis, and I'll be with you every step of the way. Click anything to get started!",
   timestamp: Date.now(),
 }
 
@@ -69,13 +69,13 @@ function addMsg(prev, msg) {
   return next.length > 50 ? next.slice(next.length - 50) : next
 }
 
-export default function AthenaAssistant({ currentEvent, currentLesson, onEventHandled, badges = [] }) {
+export default function ArtemisAssistant({ currentEvent, currentLesson, onEventHandled, badges = [] }) {
   const [messages, setMessages] = useState([WELCOME])
   const [input, setInput] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const bottomRef = useRef(null)
   const inputRef = useRef(null)
-  const { ask } = useAthena()
+  const { ask } = useArtemis()
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -98,7 +98,7 @@ export default function AthenaAssistant({ currentEvent, currentLesson, onEventHa
       setIsTyping(false)
       setMessages(prev => addMsg(prev, {
         id: crypto.randomUUID(),
-        type: 'athena',
+        type: 'artemis',
         text,
         timestamp: Date.now(),
       }))
@@ -128,7 +128,7 @@ export default function AthenaAssistant({ currentEvent, currentLesson, onEventHa
     setIsTyping(false)
     setMessages(prev => addMsg(prev, {
       id: crypto.randomUUID(),
-      type: 'athena',
+      type: 'artemis',
       text: response,
       timestamp: Date.now(),
     }))
@@ -146,7 +146,7 @@ export default function AthenaAssistant({ currentEvent, currentLesson, onEventHa
       <div className="aa__header">
         <div className="aa__brand">
           <span className="aa__owl">🦉</span>
-          <span className="aa__name">ATHENA</span>
+          <span className="aa__name">ARTEMIS</span>
         </div>
       </div>
 
@@ -157,7 +157,7 @@ export default function AthenaAssistant({ currentEvent, currentLesson, onEventHa
           </div>
         ))}
         {isTyping && (
-          <div className="aa__bubble aa__bubble--athena">
+          <div className="aa__bubble aa__bubble--artemis">
             <span className="aa__typing">
               <span /><span /><span />
             </span>
@@ -178,7 +178,7 @@ export default function AthenaAssistant({ currentEvent, currentLesson, onEventHa
         <input
           ref={inputRef}
           className="aa__input"
-          placeholder="ask athena anything..."
+          placeholder="ask artemis anything..."
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={onKeyDown}

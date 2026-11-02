@@ -67,7 +67,7 @@ export default function Taskbar({ currentView, onNavigate, currentWeek, totalXP,
           earnedBadges={earnedBadges}
         />
         <div className="taskbar__brand">
-          <div className={`taskbar__orb taskbar__orb--${orbState}`} title="Athena">
+          <div className={`taskbar__orb taskbar__orb--${orbState}`} title="Artemis">
             <span className="taskbar__orb-owl">🦉</span>
           </div>
           {streak > 1 && (

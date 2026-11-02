@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 12px 14px 10px;
-  border-bottom: 1px solid var(--athena-gold-border);
+  border-bottom: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
 }
 
@@ -32,7 +32,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
 }
 
 .aa__status {
@@ -55,7 +55,7 @@
 
 .aa__status-label {
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
 }
 
 /* Messages */
@@ -75,20 +75,20 @@
   word-break: break-word;
 }
 
-.aa__bubble--athena {
-  background: var(--athena-bg-surface);
-  border-left: 2px solid var(--athena-gold);
-  border-radius: var(--athena-radius-sm);
+.aa__bubble--artemis {
+  background: var(--artemis-bg-surface);
+  border-left: 2px solid var(--artemis-gold);
+  border-radius: var(--artemis-radius-sm);
   padding: 10px 12px;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 .aa__bubble--user {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--athena-radius-sm);
+  border-radius: var(--artemis-radius-sm);
   padding: 8px 12px;
   text-align: right;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   align-self: flex-end;
   max-width: 85%;
 }
@@ -96,7 +96,7 @@
 .aa__bubble--system {
   text-align: center;
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   opacity: 0.6;
   padding: 0 4px;
 }
@@ -113,7 +113,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--athena-gold);
+  background: var(--artemis-gold);
   opacity: 0.3;
   animation: aa-dot-pulse 1.2s ease-in-out infinite;
 }
@@ -132,13 +132,13 @@
   flex-wrap: wrap;
   gap: 6px;
   padding: 8px 12px;
-  border-top: 1px solid var(--athena-gold-border);
+  border-top: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
 }
 
 .aa__badge {
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
   border-radius: 20px;
   padding: 3px 10px;
   font-size: 11px;
@@ -152,16 +152,16 @@
   align-items: center;
   gap: 6px;
   padding: 10px 12px;
-  border-top: 1px solid var(--athena-gold-border);
+  border-top: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
 }
 
 .aa__input {
   flex: 1;
-  background: var(--athena-bg-base);
+  background: var(--artemis-bg-base);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-text-primary);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-text-primary);
   font-size: 12px;
   font-family: inherit;
   padding: 7px 10px;
@@ -170,12 +170,12 @@
 }
 
 .aa__input::placeholder {
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   opacity: 0.6;
 }
 
 .aa__input:focus {
-  border-color: var(--athena-gold-border);
+  border-color: var(--artemis-gold-border);
 }
 
 .aa__input:disabled {
@@ -186,12 +186,12 @@
 .aa__send {
   background: none;
   border: none;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 18px;
   cursor: pointer;
   padding: 4px 6px;
   line-height: 1;
-  border-radius: var(--athena-radius-sm);
+  border-radius: var(--artemis-radius-sm);
   transition: opacity 0.15s;
   flex-shrink: 0;
 }

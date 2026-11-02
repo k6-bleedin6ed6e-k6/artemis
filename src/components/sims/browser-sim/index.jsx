@@ -140,7 +140,7 @@ const DOWNLOADS = [
   { id: 'd3', name: 'StudySkills-Guide.pdf',  label: 'Study Skills Guide',    meta: 'Student Support Services' },
 ]
 
-function LibraryPage({ onAthenaEvent, simContext, onSimContext }) {
+function LibraryPage({ onArtemisEvent, simContext, onSimContext }) {
   const [query,     setQuery]     = useState(() => simContext?.repliedToMensah ? 'BUS 101' : '')
   const [downloaded, setDownloaded] = useState({})
 
@@ -154,7 +154,7 @@ function LibraryPage({ onAthenaEvent, simContext, onSimContext }) {
 
   function handleDownload(file) {
     setDownloaded(prev => ({ ...prev, [file.id]: true }))
-    onAthenaEvent?.({ lesson: 'browser', event: 'downloaded-file', context: file.name })
+    onArtemisEvent?.({ lesson: 'browser', event: 'downloaded-file', context: file.name })
     onSimContext?.({ downloads: [...(simContext?.downloads ?? []), file.name] })
   }
 
@@ -337,7 +337,7 @@ function BlankPage() {
 
 /* ── Main sim ───────────────────────────────────────────────────────────── */
 
-export default function BrowserSim({ onClose, onAthenaEvent, simContext, onSimContext, onOpenApp }) {
+export default function BrowserSim({ onClose, onArtemisEvent, simContext, onSimContext, onOpenApp }) {
   const [tabs, setTabs] = useState([{ id: 1, url: 'google.com', page: 'google', searchQuery: null }])
   const [activeTab, setActiveTab] = useState(1)
   const [urlInput, setUrlInput] = useState('google.com')
@@ -346,25 +346,25 @@ export default function BrowserSim({ onClose, onAthenaEvent, simContext, onSimCo
   const urlRef = useRef(null)
 
   useEffect(() => {
-    setTimeout(() => onAthenaEvent?.({ lesson: 'browser', event: 'browser-opened' }), 800)
+    setTimeout(() => onArtemisEvent?.({ lesson: 'browser', event: 'browser-opened' }), 800)
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const currentTab = tabs.find(t => t.id === activeTab) ?? tabs[0]
 
   function fire(event) {
-    onAthenaEvent?.({ lesson: 'browser', event })
+    onArtemisEvent?.({ lesson: 'browser', event })
     setFired(prev => {
       const next = new Set(prev)
       next.add(event)
       // nudge toward sketchy site after typed-url + opened-tab
       if (next.has('typed-url') && next.has('opened-tab') && !next.has('hint-sketchy')) {
         next.add('hint-sketchy')
-        setTimeout(() => onAthenaEvent?.({ lesson: 'browser', event: 'hint-sketchy' }), 2000)
+        setTimeout(() => onArtemisEvent?.({ lesson: 'browser', event: 'hint-sketchy' }), 2000)
       }
       const all = ['typed-url', 'opened-tab', 'used-back-button']
       if (all.every(e => next.has(e)) && !prev.has('lesson-complete')) {
         next.add('lesson-complete')
-        setTimeout(() => onAthenaEvent?.({ lesson: 'browser', event: 'lesson-complete' }), 600)
+        setTimeout(() => onArtemisEvent?.({ lesson: 'browser', event: 'lesson-complete' }), 600)
       }
       return next
     })
@@ -424,7 +424,7 @@ export default function BrowserSim({ onClose, onAthenaEvent, simContext, onSimCo
     if (currentTab.page === 'google')  return <GooglePage onSearch={handleSearch} onSearchFocus={() => fire('found-search-bar')} />
     if (currentTab.page === 'search')  return <SearchResults query={currentTab.searchQuery ?? ''} onNavigate={navigate} />
     if (currentTab.page === 'school')  return <SchoolPage onOpenPortal={() => onOpenApp?.('school-portal')} onNavigateLibrary={() => navigate('library.edu')} />
-    if (currentTab.page === 'library') return <LibraryPage onAthenaEvent={onAthenaEvent} simContext={simContext} onSimContext={onSimContext} />
+    if (currentTab.page === 'library') return <LibraryPage onArtemisEvent={onArtemisEvent} simContext={simContext} onSimContext={onSimContext} />
     if (currentTab.page === 'video')   return <VideoPage />
     if (currentTab.page === 'wiki')    return <WikiPage url={currentTab.url} />
     if (currentTab.page === 'news')    return <NewsPage />

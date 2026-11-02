@@ -1,7 +1,7 @@
 const WORKER_URL     = ''
-const PASSPHRASE_KEY = 'athena_passphrase'
-const LEARNER_ID_KEY = 'athena_learner_id'
-const QUEUE_KEY      = 'athena_event_queue'
+const PASSPHRASE_KEY = 'artemis_passphrase'
+const LEARNER_ID_KEY = 'artemis_learner_id'
+const QUEUE_KEY      = 'artemis_event_queue'
 const FLUSH_INTERVAL = 30_000
 
 // One session ID per page load — threads through all events so dashboard can count sessions
@@ -90,7 +90,7 @@ function startFlushTimer() {
 // flushing events for every visitor the moment this module loaded — no UI,
 // no disclosure, no opt-in. Found live in production 2026-07-14 (a real
 // D1 row got created from a single test probe). Contradicts the site's own
-// "privacy-first" framing and the README's "Athena works offline" claim,
+// "privacy-first" framing and the README's "Artemis works offline" claim,
 // which wasn't actually true while this ran. Left every function below
 // intact and exported — if cohort/dashboard tracking is genuinely wanted,
 // wire startSync() into an explicit, disclosed opt-in flow, not page load.

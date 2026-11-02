@@ -1,15 +1,15 @@
 .sp {
   width: 100%;
   height: 100%;
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   box-shadow: 0 8px 32px rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   font-family: inherit;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 .sp__titlebar {
@@ -18,8 +18,8 @@
   gap: 10px;
   padding: 0 12px;
   height: 36px;
-  background: var(--athena-bg-surface);
-  border-bottom: 1px solid var(--athena-gold-border);
+  background: var(--artemis-bg-surface);
+  border-bottom: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
 }
 
@@ -34,7 +34,7 @@
   flex: 1;
   text-align: center;
   font-size: 12px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   user-select: none;
 }
 
@@ -45,55 +45,55 @@
   gap: 12px;
   padding: 0 24px;
   height: 48px;
-  background: var(--athena-bg-surface);
-  border-bottom: 1px solid var(--athena-gold-border);
+  background: var(--artemis-bg-surface);
+  border-bottom: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
 }
 
 .sp__logo {
   font-size: 14px;
   font-weight: 700;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   white-space: nowrap;
 }
 
 .sp__topbar-link {
   background: none;
   border: none;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   font-size: 12px;
   font-family: inherit;
   cursor: pointer;
   padding: 4px 8px;
-  border-radius: var(--athena-radius-sm);
+  border-radius: var(--artemis-radius-sm);
   transition: color .15s, background .15s;
 }
-.sp__topbar-link:hover { color: var(--athena-text-primary); background: var(--athena-gold-dim); }
+.sp__topbar-link:hover { color: var(--artemis-text-primary); background: var(--artemis-gold-dim); }
 
 .sp__topbar-user {
   margin-left: auto;
   font-size: 12px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
 }
 
 .sp__logout-btn {
   background: none;
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-text-secondary);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-text-secondary);
   font-size: 11px;
   font-family: inherit;
   padding: 4px 10px;
   cursor: pointer;
   transition: color .15s, background .15s;
 }
-.sp__logout-btn:hover { color: var(--athena-text-primary); background: var(--athena-gold-dim); }
+.sp__logout-btn:hover { color: var(--artemis-text-primary); background: var(--artemis-gold-dim); }
 
 /* Scrollable body */
 .sp__body {
   flex: 1;
   overflow-y: auto;
-  background: var(--athena-bg-base);
+  background: var(--artemis-bg-base);
 }
 
 /* ── Login ── */
@@ -108,9 +108,9 @@
 }
 
 .sp__login-card {
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   padding: 36px 40px;
   width: 320px;
   display: flex;
@@ -121,13 +121,13 @@
 .sp__login-logo {
   font-size: 18px;
   font-weight: 700;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   text-align: center;
 }
 
 .sp__login-sub {
   font-size: 12px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   text-align: center;
   margin-top: -12px;
 }
@@ -140,16 +140,16 @@
 
 .sp__field-label {
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   margin-bottom: 4px;
 }
 
 .sp__login-input {
   width: 100%;
-  background: var(--athena-bg-base);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-text-primary);
+  background: var(--artemis-bg-base);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-text-primary);
   font-size: 13px;
   font-family: inherit;
   padding: 9px 12px;
@@ -157,15 +157,15 @@
   box-sizing: border-box;
   transition: border-color .15s;
 }
-.sp__login-input:focus { border-color: var(--athena-gold); }
-.sp__login-input::placeholder { color: var(--athena-text-secondary); opacity: .5; }
+.sp__login-input:focus { border-color: var(--artemis-gold); }
+.sp__login-input::placeholder { color: var(--artemis-text-secondary); opacity: .5; }
 
 .sp__login-btn {
   width: 100%;
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-gold);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-gold);
   font-size: 13px;
   font-family: inherit;
   font-weight: 600;
@@ -178,14 +178,14 @@
 
 .sp__login-hint {
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   text-align: center;
   opacity: 0.7;
   margin-bottom: 4px;
 }
 .sp__login-hint--found {
   opacity: 1;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 12px;
 }
 
@@ -207,13 +207,13 @@
 .sp__welcome {
   font-size: 18px;
   font-weight: 700;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 .sp__section-title {
   font-size: 12px;
   font-weight: 600;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   letter-spacing: .04em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -226,33 +226,33 @@
 }
 
 .sp__course-card {
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   padding: 18px 20px;
   cursor: pointer;
   transition: border-color .15s, background .15s;
   text-align: left;
 }
-.sp__course-card:hover { border-color: var(--athena-gold); background: var(--athena-gold-dim); }
+.sp__course-card:hover { border-color: var(--artemis-gold); background: var(--artemis-gold-dim); }
 .sp__course-card--locked { opacity: .45; cursor: default; }
-.sp__course-card--locked:hover { border-color: var(--athena-gold-border); background: var(--athena-bg-panel); }
+.sp__course-card--locked:hover { border-color: var(--artemis-gold-border); background: var(--artemis-bg-panel); }
 
 .sp__course-code {
   font-size: 13px;
   font-weight: 700;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
 }
 
 .sp__course-name {
   font-size: 12px;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   margin: 4px 0 2px;
 }
 
 .sp__course-prof {
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
 }
 
 .sp__announcements {
@@ -262,12 +262,12 @@
 }
 
 .sp__announcement {
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
   padding: 10px 14px;
   font-size: 12px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
 }
 
 /* ── Assignment ── */
@@ -281,7 +281,7 @@
 .sp__back-btn {
   background: none;
   border: none;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 12px;
   font-family: inherit;
   cursor: pointer;
@@ -292,9 +292,9 @@
 .sp__back-btn:hover { opacity: .75; }
 
 .sp__assignment-card {
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
@@ -304,7 +304,7 @@
 .sp__assignment-title {
   font-size: 17px;
   font-weight: 700;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   margin: 0;
 }
 
@@ -315,24 +315,24 @@
 
 .sp__meta-chip {
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
 }
-.sp__meta-chip strong { color: var(--athena-text-primary); }
+.sp__meta-chip strong { color: var(--artemis-text-primary); }
 
 .sp__assignment-body {
   font-size: 13px;
   line-height: 1.7;
-  color: var(--athena-text-primary);
-  border-top: 1px solid var(--athena-gold-border);
+  color: var(--artemis-text-primary);
+  border-top: 1px solid var(--artemis-gold-border);
   padding-top: 14px;
 }
 
 .sp__assignment-btn {
   align-self: flex-start;
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-gold);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-gold);
   font-size: 13px;
   font-family: inherit;
   font-weight: 600;
@@ -351,9 +351,9 @@
 }
 
 .sp__submit-card {
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   padding: 24px 28px;
   display: flex;
   flex-direction: column;
@@ -363,12 +363,12 @@
 .sp__submit-title {
   font-size: 16px;
   font-weight: 700;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 .sp__upload-zone {
-  border: 2px dashed var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
+  border: 2px dashed var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
   padding: 28px 20px;
   display: flex;
   flex-direction: column;
@@ -377,12 +377,12 @@
   cursor: pointer;
   transition: border-color .15s, background .15s;
 }
-.sp__upload-zone:hover { border-color: var(--athena-gold); background: var(--athena-gold-dim); }
-.sp__upload-zone--has-file { border-color: var(--athena-gold); background: var(--athena-gold-dim); }
+.sp__upload-zone:hover { border-color: var(--artemis-gold); background: var(--artemis-gold-dim); }
+.sp__upload-zone--has-file { border-color: var(--artemis-gold); background: var(--artemis-gold-dim); }
 
 .sp__upload-icon { font-size: 28px; }
-.sp__upload-label { font-size: 13px; color: var(--athena-text-primary); font-weight: 500; }
-.sp__upload-hint { font-size: 11px; color: var(--athena-text-secondary); }
+.sp__upload-label { font-size: 13px; color: var(--artemis-text-primary); font-weight: 500; }
+.sp__upload-hint { font-size: 11px; color: var(--artemis-text-secondary); }
 .sp__upload-input { display: none; }
 
 .sp__file-chosen {
@@ -390,16 +390,16 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-weight: 500;
 }
 
 .sp__submit-btn {
   align-self: flex-start;
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-gold);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-gold);
   font-size: 13px;
   font-family: inherit;
   font-weight: 600;
@@ -419,21 +419,21 @@
 .sp__grades-table th {
   text-align: left;
   font-size: 11px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   font-weight: 600;
   letter-spacing: .04em;
   text-transform: uppercase;
   padding: 0 12px 10px 0;
-  border-bottom: 1px solid var(--athena-gold-border);
+  border-bottom: 1px solid var(--artemis-gold-border);
 }
 .sp__grades-table td {
   padding: 12px 12px 12px 0;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.sp__grade-score { font-weight: 600; color: var(--athena-gold); }
-.sp__grade-status { color: var(--athena-green); font-weight: 500; }
-.sp__grade-status--pending { color: var(--athena-text-secondary); font-weight: 400; }
+.sp__grade-score { font-weight: 600; color: var(--artemis-gold); }
+.sp__grade-status { color: var(--artemis-green); font-weight: 500; }
+.sp__grade-status--pending { color: var(--artemis-text-secondary); font-weight: 400; }
 .sp__grade-pending td { opacity: .6; }
 
 /* ── Success ── */
@@ -455,37 +455,37 @@
 .sp__success-heading {
   font-size: 22px;
   font-weight: 700;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   margin: 0;
 }
 
 .sp__success-sub {
   font-size: 13px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   text-align: center;
   max-width: 300px;
   line-height: 1.6;
 }
 
 .sp__success-detail {
-  background: var(--athena-bg-panel);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
+  background: var(--artemis-bg-panel);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
   padding: 12px 24px;
   font-size: 12px;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   text-align: center;
 }
 
 .sp__success-detail strong {
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
 }
 
 .sp__grades-link {
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-sm);
-  color: var(--athena-gold);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-sm);
+  color: var(--artemis-gold);
   font-size: 13px;
   font-family: inherit;
   padding: 9px 24px;

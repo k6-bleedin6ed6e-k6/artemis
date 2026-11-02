@@ -17,7 +17,7 @@ function strength(pwd) {
   return              { pct: 100, label: 'Strong', cls: 'ps__bar--strong' }
 }
 
-export default function PasswordSim({ onClose, onAthenaEvent }) {
+export default function PasswordSim({ onClose, onArtemisEvent }) {
   const [username, setUsername] = useState('')
   const [email,    setEmail]    = useState('')
   const [password, setPassword] = useState('')
@@ -29,7 +29,7 @@ export default function PasswordSim({ onClose, onAthenaEvent }) {
   function fire(event) {
     if (firedRef.current.has(event)) return
     firedRef.current.add(event)
-    onAthenaEvent?.({ lesson: 'password-security', event })
+    onArtemisEvent?.({ lesson: 'password-security', event })
   }
 
   const str = strength(password)

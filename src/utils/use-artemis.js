@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { athenaResponses } from './athena-responses'
+import { artemisResponses } from './artemis-responses'
 import { askTutor, tutorEnabled } from './use-tutor'
 
 function pickRandom(arr) {
@@ -10,7 +10,7 @@ const DIRECT_KEYWORDS = [
   { match: /\b(close|exit|quit|back|leave|stop)\b/i,
     reply: 'Click the red dot in the top-left corner of the sim to close it.' },
   { match: /\b(hi|hello|hey|good\s*(morning|afternoon|evening|night))\b/i,
-    reply: "Hi! I'm Athena — choose any lesson from the panel and I'll guide you through it step by step." },
+    reply: "Hi! I'm Artemis — choose any lesson from the panel and I'll guide you through it step by step." },
   { match: /\b(thank|thanks|cheers)\b/i,
     reply: "You're welcome! Keep going — you're doing great." },
   { match: /\b(help|lost|stuck|confused|what\s*do|how\s*do|what\s*now|start)\b/i,
@@ -37,7 +37,7 @@ const LESSON_TOPICS = {
 }
 
 function getOfflineResponse(lesson, event, context) {
-  const lessonBank = athenaResponses[lesson]
+  const lessonBank = artemisResponses[lesson]
   if (lessonBank?.[event]) {
     const raw = pickRandom(lessonBank[event])
     return raw.replace(/\{streak\}/g, context || '')
@@ -49,7 +49,7 @@ function getOfflineResponse(lesson, event, context) {
     }
   }
 
-  const globalBank = athenaResponses._global
+  const globalBank = artemisResponses._global
   if (globalBank?.[event]) return pickRandom(globalBank[event])
   return "You're doing great — keep going, one step at a time."
 }
@@ -64,7 +64,7 @@ async function askTutorBackend(lesson, question) {
   return result.reply || null
 }
 
-export default function useAthena() {
+export default function useArtemis() {
   const ask = useCallback(async ({ lesson, event, context = '' }) => {
     if (event === 'direct-question' && context) {
       const reply = await askTutorBackend(lesson, context)

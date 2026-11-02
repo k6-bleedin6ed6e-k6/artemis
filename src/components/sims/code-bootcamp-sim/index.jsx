@@ -5,7 +5,7 @@ import { playChime } from '../../../utils/sound'
 import { runPython, isPyodideReady } from '../../../utils/pyodide-runner'
 import './code-bootcamp-sim.css'
 
-const STORAGE_KEY = id => `athena_cb_${id}`
+const STORAGE_KEY = id => `artemis_cb_${id}`
 
 function loadSession(lesson) {
   try {
@@ -90,7 +90,7 @@ function Editor({ value, onChange, readOnly }) {
 }
 
 /* ─── Main ─── */
-export default function CodeBootcampSim({ onClose, onAthenaEvent, onSimContext }) {
+export default function CodeBootcampSim({ onClose, onArtemisEvent, onSimContext }) {
   const lesson = pythonGradeLesson
   const saved  = loadSession(lesson)
 
@@ -119,7 +119,7 @@ export default function CodeBootcampSim({ onClose, onAthenaEvent, onSimContext }
     const key = `${event}:${stepIndex}`
     if (firedRef.current.has(key)) return
     firedRef.current.add(key)
-    onAthenaEvent?.({ lesson: 'code-bootcamp', event, context })
+    onArtemisEvent?.({ lesson: 'code-bootcamp', event, context })
   }
 
   function handleCheck() {
@@ -185,14 +185,14 @@ export default function CodeBootcampSim({ onClose, onAthenaEvent, onSimContext }
       const { output, error } = await runPython(code, s => setPyStatus(s === 'ready' ? 'running' : 'loading'))
       setPyOutput({ output, error })
       setPyStatus(error ? 'error' : 'done')
-      onAthenaEvent?.({ lesson: 'code-bootcamp', event: 'python-run', context: error ? 'error' : 'success' })
+      onArtemisEvent?.({ lesson: 'code-bootcamp', event: 'python-run', context: error ? 'error' : 'success' })
     } catch (e) {
       // Pyodide itself can fail to load (CDN hiccup, network, ad-blocker) —
       // without this, pyStatus stays stuck on 'loading'/'running' forever
       // since nothing else ever resets it.
       setPyOutput({ output: '', error: e?.message || 'Failed to start Python — try Run again.' })
       setPyStatus('error')
-      onAthenaEvent?.({ lesson: 'code-bootcamp', event: 'python-run', context: 'error' })
+      onArtemisEvent?.({ lesson: 'code-bootcamp', event: 'python-run', context: 'error' })
     }
   }
 

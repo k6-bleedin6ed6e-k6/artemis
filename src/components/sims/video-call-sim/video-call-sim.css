@@ -2,14 +2,14 @@
   width: 100%;
   height: 100%;
   background: #131318;
-  border: 1px solid var(--athena-gold-border);
-  border-radius: var(--athena-radius-lg);
+  border: 1px solid var(--artemis-gold-border);
+  border-radius: var(--artemis-radius-lg);
   box-shadow: 0 8px 32px rgba(0,0,0,0.65);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   font-family: inherit;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 /* Title bar */
@@ -29,7 +29,7 @@
 .vc__dot--red:hover { opacity: .8; }
 .vc__dot--yellow { background: #ffbd2e; }
 .vc__dot--green  { background: #27c93f; }
-.vc__meeting { flex: 1; text-align: center; font-size: 12px; color: var(--athena-text-secondary); user-select: none; }
+.vc__meeting { flex: 1; text-align: center; font-size: 12px; color: var(--artemis-text-secondary); user-select: none; }
 .vc__timer   { font-size: 11px; color: #e05b5b; font-variant-numeric: tabular-nums; }
 
 /* Main area */
@@ -73,7 +73,7 @@
   font-size: 10px;
   background: rgba(201,168,76,0.18);
   border: 1px solid rgba(201,168,76,0.3);
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   padding: 1px 6px;
   border-radius: 3px;
 }
@@ -91,7 +91,7 @@
   font-size: 10px;
   background: rgba(29,158,117,0.25);
   border: 1px solid rgba(29,158,117,0.45);
-  color: var(--athena-green);
+  color: var(--artemis-green);
   padding: 2px 8px;
   border-radius: 3px;
   letter-spacing: .04em;
@@ -118,7 +118,7 @@
 }
 .vc__chat-x {
   background: none; border: none;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   cursor: pointer; font-size: 13px; padding: 2px;
 }
 .vc__chat-msgs {
@@ -130,8 +130,8 @@
   gap: 10px;
 }
 .vc__msg { display: flex; flex-direction: column; gap: 2px; }
-.vc__msg-from { font-size: 10px; color: var(--athena-text-secondary); }
-.vc__msg--you .vc__msg-from { color: var(--athena-green); }
+.vc__msg-from { font-size: 10px; color: var(--artemis-text-secondary); }
+.vc__msg--you .vc__msg-from { color: var(--artemis-green); }
 .vc__msg-body { font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.45; }
 .vc__chat-row {
   display: flex; gap: 6px;
@@ -144,17 +144,17 @@
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 4px;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   font-size: 12px; font-family: inherit;
   padding: 6px 8px; outline: none;
 }
-.vc__chat-input:focus { border-color: var(--athena-gold-border); }
-.vc__chat-input::placeholder { color: var(--athena-text-secondary); opacity: .5; }
+.vc__chat-input:focus { border-color: var(--artemis-gold-border); }
+.vc__chat-input::placeholder { color: var(--artemis-text-secondary); opacity: .5; }
 .vc__chat-send {
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
   border-radius: 4px;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 11px; font-family: inherit;
   padding: 6px 10px; cursor: pointer;
 }
@@ -183,7 +183,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-family: inherit;
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
   transition: background .15s, border-color .15s;
 }
 .vc__ctrl:hover    { background: rgba(255,255,255,0.09); }
@@ -192,7 +192,7 @@
 .vc__ctrl--leave   { background: rgba(224,91,91,0.14); border-color: rgba(224,91,91,0.3); color: #e05b5b; margin-left: 10px; }
 .vc__ctrl--leave:hover { background: rgba(224,91,91,0.24); }
 .vc__ctrl-icon { font-size: 18px; line-height: 1; }
-.vc__ctrl-lbl  { font-size: 10px; color: var(--athena-text-secondary); white-space: nowrap; }
+.vc__ctrl-lbl  { font-size: 10px; color: var(--artemis-text-secondary); white-space: nowrap; }
 
 /* Task strip */
 .vc__tasks {
@@ -212,7 +212,7 @@
   margin-right: 16px;
 }
 .vc__task:last-child { border-right: none; }
-.vc__task-check { font-size: 11px; color: var(--athena-gold,#d4af37); }
+.vc__task-check { font-size: 11px; color: var(--artemis-gold,#d4af37); }
 .vc__task--done .vc__task-check { color: #2db87a; }
 .vc__task-label { font-size: 11px; color: #999; }
 .vc__task--done .vc__task-label { color: #555; text-decoration: line-through; }

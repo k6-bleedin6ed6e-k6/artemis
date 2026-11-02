@@ -88,7 +88,7 @@ function buildCrumbs(root, targetId, trail = []) {
   return null
 }
 
-export default function FileExplorerSim({ onClose, onAthenaEvent, simContext }) {
+export default function FileExplorerSim({ onClose, onArtemisEvent, simContext }) {
   const [fs, setFs] = useState(() => {
     if (!simContext?.downloads?.length) return INITIAL_FS
     let base = INITIAL_FS
@@ -126,7 +126,7 @@ export default function FileExplorerSim({ onClose, onAthenaEvent, simContext }) 
   }, [])
 
   const fireEvent = useCallback((event, context = '') => {
-    onAthenaEvent?.({ lesson: 'file-explorer', event, context })
+    onArtemisEvent?.({ lesson: 'file-explorer', event, context })
 
     setCompleted(prev => {
       const next = new Set(prev)
@@ -134,11 +134,11 @@ export default function FileExplorerSim({ onClose, onAthenaEvent, simContext }) 
       const all = ['opened-folder', 'created-folder', 'renamed-file', 'moved-file', 'deleted-file']
       if (all.every(e => next.has(e)) && !prev.has('lesson-complete')) {
         next.add('lesson-complete')
-        setTimeout(() => onAthenaEvent?.({ lesson: 'file-explorer', event: 'lesson-complete', context: '' }), 600)
+        setTimeout(() => onArtemisEvent?.({ lesson: 'file-explorer', event: 'lesson-complete', context: '' }), 600)
       }
       return next
     })
-  }, [onAthenaEvent])
+  }, [onArtemisEvent])
 
   function navigateTo(id) {
     const node = findNode(fs, id)

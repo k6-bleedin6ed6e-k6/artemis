@@ -8,7 +8,7 @@ const COURSES = [
   { code: 'COM 105', name: 'Business Communication',   prof: 'Prof. Addo',    active: false },
 ]
 
-export default function SchoolPortalSim({ onClose, onAthenaEvent, simContext }) {
+export default function SchoolPortalSim({ onClose, onArtemisEvent, simContext }) {
   const [screen, setScreen]         = useState('login')
   const [username, setUsername]     = useState(() => simContext?.credentialsRead ? 'student2026' : '')
   const [password, setPassword]     = useState('')
@@ -19,13 +19,13 @@ export default function SchoolPortalSim({ onClose, onAthenaEvent, simContext }) 
   const fileInputRef = useRef(null)
 
   function fire(event) {
-    onAthenaEvent?.({ lesson: 'school-portal', event })
+    onArtemisEvent?.({ lesson: 'school-portal', event })
     setFired(prev => {
       const next = new Set(prev)
       next.add(event)
       if (event === 'submitted-assignment' && !prev.has('lesson-complete')) {
         next.add('lesson-complete')
-        setTimeout(() => onAthenaEvent?.({ lesson: 'school-portal', event: 'lesson-complete' }), 800)
+        setTimeout(() => onArtemisEvent?.({ lesson: 'school-portal', event: 'lesson-complete' }), 800)
       }
       return next
     })

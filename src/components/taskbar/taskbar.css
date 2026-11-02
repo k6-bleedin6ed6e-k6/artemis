@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   height: 44px;
-  background: var(--athena-bg-surface);
-  border-bottom: 1px solid var(--athena-gold-border);
+  background: var(--artemis-bg-surface);
+  border-bottom: 1px solid var(--artemis-gold-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,7 +19,7 @@
   gap: 7px;
   user-select: none;
   padding-left: 10px;
-  border-left: 1px solid var(--athena-gold-border);
+  border-left: 1px solid var(--artemis-gold-border);
   margin-left: 4px;
 }
 
@@ -104,22 +104,22 @@
 .taskbar__nav-btn {
   background: none;
   border: none;
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   font-size: 13px;
   font-family: inherit;
   padding: 6px 14px;
-  border-radius: var(--athena-radius-sm);
+  border-radius: var(--artemis-radius-sm);
   cursor: pointer;
   transition: color 0.15s, background 0.15s;
 }
 
 .taskbar__nav-btn:hover {
-  color: var(--athena-text-primary);
+  color: var(--artemis-text-primary);
 }
 
 .taskbar__nav-btn--active {
-  color: var(--athena-gold);
-  background: var(--athena-gold-dim);
+  color: var(--artemis-gold);
+  background: var(--artemis-gold-dim);
 }
 
 .taskbar__right {
@@ -131,13 +131,13 @@
 }
 
 .taskbar__contact {
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   font-size: 11px;
   text-decoration: none;
   opacity: 0.6;
   transition: opacity 0.15s;
 }
-.taskbar__contact:hover { opacity: 1; color: var(--athena-gold); }
+.taskbar__contact:hover { opacity: 1; color: var(--artemis-gold); }
 
 .taskbar__sound {
   background: none;
@@ -155,13 +155,13 @@
 }
 
 .taskbar__time {
-  color: var(--athena-text-secondary);
+  color: var(--artemis-text-secondary);
   font-size: 12px;
   font-variant-numeric: tabular-nums;
 }
 
 .taskbar__phase {
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 10px;
   letter-spacing: 1.5px;
   text-transform: lowercase;

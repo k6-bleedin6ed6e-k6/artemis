@@ -5,8 +5,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--athena-bg-panel);
-  border-right: 1px solid var(--athena-gold-border);
+  background: var(--artemis-bg-panel);
+  border-right: 1px solid var(--artemis-gold-border);
   overflow: hidden;
   font-family: system-ui, -apple-system, sans-serif;
 }
@@ -30,8 +30,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 13px 14px;
-  background: var(--athena-bg-surface);
-  border-bottom: 1px solid var(--athena-gold-border);
+  background: var(--artemis-bg-surface);
+  border-bottom: 1px solid var(--artemis-gold-border);
   flex-shrink: 0;
   user-select: none;
 }
@@ -47,7 +47,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
 }
 
 /* Status dot — mirrors orb state */
@@ -74,7 +74,7 @@
   color: rgba(255,255,255,0.4);
   padding: 2px 5px;
 }
-.aw__collapse-btn:hover { color: var(--athena-gold); background: none; }
+.aw__collapse-btn:hover { color: var(--artemis-gold); background: none; }
 
 .aw__action-btn {
   background: none;
@@ -112,8 +112,8 @@
   overflow-wrap: anywhere;
 }
 
-.aw__bubble--athena {
-  background: var(--athena-bg-surface);
+.aw__bubble--artemis {
+  background: var(--artemis-bg-surface);
   border: 1px solid rgba(201,168,76,0.15);
   color: rgba(255,255,255,0.88);
   align-self: flex-start;
@@ -121,8 +121,8 @@
 }
 
 .aw__bubble--user {
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
   color: rgba(255,255,255,0.85);
   align-self: flex-end;
   border-bottom-right-radius: 4px;
@@ -151,7 +151,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--athena-gold);
+  background: var(--artemis-gold);
   opacity: 0.4;
   animation: aw-dot 1.2s ease-in-out infinite;
 }
@@ -172,7 +172,7 @@
   font-size: 10px;
   line-height: 1.4;
 }
-.aw__privacy-note code { color: var(--athena-gold); }
+.aw__privacy-note code { color: var(--artemis-gold); }
 
 .aw__input-row {
   display: flex;
@@ -185,7 +185,7 @@
 
 .aw__input {
   flex: 1;
-  background: var(--athena-bg-surface);
+  background: var(--artemis-bg-surface);
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 8px;
   color: rgba(255,255,255,0.88);
@@ -196,16 +196,16 @@
   transition: border-color 0.15s;
   min-width: 0;
 }
-.aw__input:focus        { border-color: var(--athena-gold-border); }
+.aw__input:focus        { border-color: var(--artemis-gold-border); }
 .aw__input::placeholder { color: rgba(255,255,255,0.2); }
 .aw__input:disabled     { opacity: 0.4; }
 
 .aw__send {
   flex-shrink: 0;
-  background: var(--athena-gold-dim);
-  border: 1px solid var(--athena-gold-border);
+  background: var(--artemis-gold-dim);
+  border: 1px solid var(--artemis-gold-border);
   border-radius: 8px;
-  color: var(--athena-gold);
+  color: var(--artemis-gold);
   font-size: 16px;
   font-family: inherit;
   padding: 6px 11px;
@@ -213,7 +213,7 @@
   transition: all 0.15s;
   line-height: 1;
 }
-.aw__send:hover:not(:disabled) { background: rgba(201,168,76,0.2); border-color: var(--athena-gold); }
+.aw__send:hover:not(:disabled) { background: rgba(201,168,76,0.2); border-color: var(--artemis-gold); }
 .aw__send:disabled              { opacity: 0.25; cursor: not-allowed; }
 
 /* ── Floating orb ────────────────────────────────────────────────────────── */
@@ -236,7 +236,7 @@
   min-width: 18px;
   height: 18px;
   border-radius: 9px;
-  background: var(--athena-gold);
+  background: var(--artemis-gold);
   color: #0a0e1a;
   font-size: 10px;
   font-weight: 800;
@@ -246,7 +246,7 @@
   justify-content: center;
   padding: 0 4px;
   pointer-events: none;
-  border: 2px solid var(--athena-bg-base);
+  border: 2px solid var(--artemis-bg-base);
   animation: orb-badge-pop 0.2s cubic-bezier(0.22,1,0.36,1) both;
 }
 

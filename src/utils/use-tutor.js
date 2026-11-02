@@ -60,7 +60,7 @@ async function readJsonResponse(response) {
 }
 
 function userFacingError(status) {
-  if (status === 429) return 'Athena is busy. Try again in a little while.'
+  if (status === 429) return 'Artemis is busy. Try again in a little while.'
   return 'The live tutor is unavailable right now.'
 }
 
@@ -89,7 +89,7 @@ export async function askTutor({ lessonTitle, question, recentContext }) {
       signal: controller.signal,
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
-        site: 'athena',
+        site: 'artemis',
         lessonTitle: (lessonTitle || '').trim(),
         question: question.trim(),
         recentContext: (recentContext || '').trim(),

@@ -1,15 +1,15 @@
-# Athena
+# Artemis
 
 > **A computer literacy sandbox for the curious.**
 > Learn how computers work — by actually using one.
 
-**Live:** [athena.kontor.studio](https://athena.kontor.studio) &nbsp;·&nbsp; **Stack:** React 19 + Vite 8 &nbsp;·&nbsp; **For:** Absolute beginners → confident users
+**Live:** [artemis.kontor.studio](https://Artemis.kontor.studio) &nbsp;·&nbsp; **Stack:** React 19 + Vite 8 &nbsp;·&nbsp; **For:** Absolute beginners → confident users
 
 ---
 
-## What is Athena?
+## What is Artemis?
 
-Athena is an interactive, browser-based desktop environment that teaches real computer skills through hands-on practice. Built-in lesson guidance works locally; optional free-form questions can use the shared AI tutor.
+Artemis is an interactive, browser-based desktop environment that teaches real computer skills through hands-on practice. Built-in lesson guidance works locally; optional free-form questions can use the shared AI tutor.
 
 No downloads. No account required. Works offline. Installable as a PWA.
 
@@ -105,13 +105,13 @@ Validation is lenient-with-coaching: `git add .` is accepted with a note explain
 
 ---
 
-## AI Assistant — Athena
+## AI Assistant — Artemis
 
-Athena is always visible — a permanent left panel with a floating 🦉 orb that pulses with her state. The panel collapses to give sims more room.
+Artemis is always visible — a permanent left panel with a floating 🦉 orb that pulses with her state. The panel collapses to give sims more room.
 
 **Built-in guidance:** Lesson events and common questions use local response content. Those interactions do not send progress or lesson activity to the tutor service.
 
-**Optional live tutor:** When a learner sends a free-form question, the browser sends that question and its lesson label to the shared `kontor-tutor-worker`; the Worker forwards it to Groq (`llama-3.1-8b-instant`). The provider key stays in the Worker. The tutor is limited to short, lesson-focused replies. Learners are told not to submit personal or sensitive information. If the live tutor fails, Athena says so instead of presenting a canned response as an AI answer.
+**Optional live tutor:** When a learner sends a free-form question, the browser sends that question and its lesson label to the shared `kontor-tutor-worker`; the Worker forwards it to Groq (`llama-3.1-8b-instant`). The provider key stays in the Worker. The tutor is limited to short, lesson-focused replies. Learners are told not to submit personal or sensitive information. If the live tutor fails, Artemis says so instead of presenting a canned response as an AI answer.
 
 Local development stays on built-in responses by default. To opt in, point `VITE_TUTOR_WORKER_URL` at a local Worker instance; never put an AI provider key in a `VITE_` variable.
 
@@ -119,11 +119,11 @@ Local development stays on built-in responses by default. To opt in, point `VITE
 
 ## Progress & Identity
 
-**Save code** — after completing your first lesson, Athena shows you a three-word save code (e.g. `amber-cedar-42`). It encodes your local progress directly (`progressToCode`/`codeToProgress`) — no server round-trip. Paste it back in on any device/browser to restore.
+**Save code** — after completing your first lesson, Artemis shows you a three-word save code (e.g. `amber-cedar-42`). It encodes your local progress directly (`progressToCode`/`codeToProgress`) — no server round-trip. Paste it back in on any device/browser to restore.
 
 **Checkpoint links** — the Progress screen also generates a `?restore=` URL that encodes your local progress as base64 — same mechanism, shareable as a link instead of a phrase.
 
-> A Cloudflare D1 + `athena-sync` worker cloud-sync layer existed at one point but was abandoned 2026-06-04 (account cleared). The sync call sites (`trackEvent`, `joinCohort`, etc.) are still in the code and degrade silently — they don't error, they just do nothing. Progress is 100% local now.
+> A Cloudflare D1 + `Artemis-sync` worker cloud-sync layer existed at one point but was abandoned 2026-06-04 (account cleared). The sync call sites (`trackEvent`, `joinCohort`, etc.) are still in the code and degrade silently — they don't error, they just do nothing. Progress is 100% local now.
 
 ---
 
@@ -131,10 +131,10 @@ Local development stays on built-in responses by default. To opt in, point `VITE
 
 - **PWA** — installable, works fully offline after first load
 - **Circadian engine** — UI palette shifts by time of day (dawn / day / golden hour / night)
-- **Instructor dashboard** — `athena.kontor.studio/dashboard.html` still exists but depended on the now-removed D1 backend for cohort-wide data; not currently functional, kept as a placeholder rather than fixed
+- **Instructor dashboard** — `Artemis.kontor.studio/dashboard.html` still exists but depended on the now-removed D1 backend for cohort-wide data; not currently functional, kept as a placeholder rather than fixed
 - **Free Explore** — Practice tab opens all sims simultaneously with no lesson requirements
 - **Celebration overlay** — gold confetti + fanfare on every lesson completion
-- **Streak counter** — consecutive day tracking, Athena greets with streak message from day 2
+- **Streak counter** — consecutive day tracking, Artemis greets with streak message from day 2
 
 ---
 
@@ -153,10 +153,10 @@ No UI library dependencies. Every component is hand-rolled.
 
 ## Visual identity
 
-Athena uses raised mineral surfaces that brighten through Choice, Desire, and Still-Pine,
+Artemis uses raised mineral surfaces that brighten through Choice, Desire, and Still-Pine,
 then settle into a softer Nyx palette. The existing rose, ocean, amber, and iris phase accents
 stay intact. Body text starts at 16px and scales with the viewport; the desktop learning field
-uses the owner's optimized workshop artwork at `/images/athena-workbench.webp`, with a
+uses the owner's optimized workshop artwork at `/images/Artemis-workbench.webp`, with a
 compact one-column layout on phones and open lesson rows instead of stacked slabs.
 
 ---
@@ -165,9 +165,9 @@ compact one-column layout on phones and open lesson rows instead of stacked slab
 
 ```bash
 # 1. Clone (primary or mirror)
-git clone git@github.com:kwasikontor45/athena.git
-# or: git clone git@github-k6:k6-bleedin6ed6e-k6/athena.git
-cd athena
+git clone git@github.com:kwasikontor45/Artemis.git
+# or: git clone git@github-k6:k6-bleedin6ed6e-k6/Artemis.git
+cd Artemis
 
 # 2. Install
 npm install
@@ -192,7 +192,7 @@ src/
 ├── components/
 │   ├── desktop/              # Lesson cards by week, daily mission, finished state
 │   ├── taskbar/              # Navigation, clock, XP tracker, sound toggle
-│   ├── athena-widget/        # AI assistant — left panel + floating orb
+│   ├── Artemis-widget/        # AI assistant — left panel + floating orb
 │   ├── celebration/          # Confetti overlay on lesson complete
 │   ├── progress-tracker/     # Taskbar XP display + floater animation
 │   └── sims/
@@ -214,8 +214,8 @@ src/
 │   ├── code-lessons.js       # Code Bootcamp step definitions + validation
 │   ├── git-lessons.js        # Git Basics step definitions + terminal output
 │   ├── pyodide-runner.js     # Pyodide singleton — shared across CB and git-sim
-│   ├── use-athena.js         # AI provider chain + learner profile injection
-│   ├── athena-responses.js   # Built-in offline responses for all lessons
+│   ├── use-Artemis.js         # AI provider chain + learner profile injection
+│   ├── Artemis-responses.js   # Built-in offline responses for all lessons
 │   ├── use-progress.js       # XP, badges, localStorage, checkpoint encode/decode
 │   ├── use-sync.js           # Passphrase/save-code identity — D1 sync calls are dead code (backend abandoned 2026-06-04), degrade silently
 │   ├── use-circadian.js      # Time-of-day phase detection
@@ -232,11 +232,11 @@ functions/
 
 ## For Instructors
 
-**Dashboard** — `athena.kontor.studio/dashboard.html`. Type the access phrase into Athena's chat to receive the dashboard link and Bearer token. The phrase is hashed client-side; the secret never appears in the source code.
+**Dashboard** — `Artemis.kontor.studio/dashboard.html`. Type the access phrase into Artemis's chat to receive the dashboard link and Bearer token. The phrase is hashed client-side; the secret never appears in the source code.
 
 **Cohorts** — pick any code and share it with learners. They enter it in the Progress screen. The cohort springs to life on first join — no setup required.
 
-**Adding a lesson** — duplicate any sim folder, add one entry to `SIM_MAP` in `src/App.jsx`, add a lesson entry to `src/utils/lessons.js`. The rest (progress tracking, Athena responses, celebration overlay) picks it up automatically.
+**Adding a lesson** — duplicate any sim folder, add one entry to `SIM_MAP` in `src/App.jsx`, add a lesson entry to `src/utils/lessons.js`. The rest (progress tracking, Artemis responses, celebration overlay) picks it up automatically.
 
 ---
 

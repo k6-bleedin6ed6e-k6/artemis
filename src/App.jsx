@@ -20,7 +20,7 @@ import { useStreak } from './utils/use-streak'
 import { playFanfare } from './utils/sound'
 import { LESSONS } from './utils/lessons'
 import CelebrationOverlay from './components/celebration'
-import AthenaWidget from './components/athena-widget'
+import ArtemisWidget from './components/artemis-widget'
 import { trackEvent } from './utils/use-sync'
 import './app.css'
 
@@ -108,7 +108,7 @@ export default function App() {
   const [currentView, setCurrentView] = useState('desktop')
   const [openApp, setOpenApp] = useState(null)
   const [currentEvent, setCurrentEvent] = useState(null)
-  const handleAthenaEventHandled = useCallback(() => setCurrentEvent(null), [])
+  const handleArtemisEventHandled = useCallback(() => setCurrentEvent(null), [])
   const [simContext, setSimContext] = useState({})
   const [pendingRestore, setPendingRestore] = useState(() => {
     const params = new URLSearchParams(window.location.search)
@@ -131,21 +131,21 @@ export default function App() {
   const [orbState, setOrbState] = useState('idle')
   const [celebration, setCelebration] = useState(null)
   const [showSaveCode, setShowSaveCode] = useState(false)
-  const saveCodeDismissed = useRef(localStorage.getItem('athena_save_code_shown') === 'true')
+  const saveCodeDismissed = useRef(localStorage.getItem('artemis_save_code_shown') === 'true')
   const prevCompletedRef = useRef(null)
   if (prevCompletedRef.current === null) prevCompletedRef.current = new Set(completedLessons)
 
   useEffect(() => {
     const r = document.documentElement
     r.style.colorScheme = 'dark'
-    r.style.setProperty('--athena-gold',           palette.gold)
-    r.style.setProperty('--athena-gold-dim',       `rgba(${palette.goldRgb}, 0.15)`)
-    r.style.setProperty('--athena-gold-border',    `rgba(${palette.goldRgb}, 0.25)`)
-    r.style.setProperty('--athena-bg-base',        palette.bgBase)
-    r.style.setProperty('--athena-bg-surface',     palette.bgSurface)
-    r.style.setProperty('--athena-bg-panel',       palette.bgPanel)
-    r.style.setProperty('--athena-text-primary',   palette.textPrimary)
-    r.style.setProperty('--athena-text-secondary', palette.textSecondary)
+    r.style.setProperty('--artemis-gold',           palette.gold)
+    r.style.setProperty('--artemis-gold-dim',       `rgba(${palette.goldRgb}, 0.15)`)
+    r.style.setProperty('--artemis-gold-border',    `rgba(${palette.goldRgb}, 0.25)`)
+    r.style.setProperty('--artemis-bg-base',        palette.bgBase)
+    r.style.setProperty('--artemis-bg-surface',     palette.bgSurface)
+    r.style.setProperty('--artemis-bg-panel',       palette.bgPanel)
+    r.style.setProperty('--artemis-text-primary',   palette.textPrimary)
+    r.style.setProperty('--artemis-text-secondary', palette.textSecondary)
   }, [palette])
 
   useEffect(() => {
@@ -190,17 +190,17 @@ export default function App() {
     setSimContext(prev => ({ ...prev, ...update }))
   }, [])
 
-  const handleAthenaEvent = useCallback((ev) => {
+  const handleArtemisEvent = useCallback((ev) => {
     setCurrentEvent(ev)
     recordEvent(ev.lesson, ev.event)
     trackEvent(ev.lesson, ev.event, ev.context || '')
   }, [recordEvent])
 
-  // Fire desktop-navigation events with Athena response, but only the first time each
+  // Fire desktop-navigation events with Artemis response, but only the first time each
   const fireDesktopNavOnce = useCallback((event) => {
     if (isEventDone('desktop-navigation', event)) return
-    handleAthenaEvent({ lesson: 'desktop-navigation', event })
-  }, [isEventDone, handleAthenaEvent])
+    handleArtemisEvent({ lesson: 'desktop-navigation', event })
+  }, [isEventDone, handleArtemisEvent])
 
   const handleCloseApp = useCallback(() => {
     setOpenApp(null)
@@ -252,12 +252,12 @@ export default function App() {
     return (
       <div className="app app--standalone-bootcamp">
         <div className="app__standalone-bar">
-          <a className="app__standalone-back" href="/">← back to athena</a>
+          <a className="app__standalone-back" href="/">← back to artemis</a>
         </div>
         <div className="app__standalone-body">
           <CodeBootcampSim
             onClose={() => window.location.href = '/'}
-            onAthenaEvent={handleAthenaEvent}
+            onArtemisEvent={handleArtemisEvent}
           />
         </div>
       </div>
@@ -277,7 +277,7 @@ export default function App() {
           onDismiss={() => {
             setShowSaveCode(false)
             saveCodeDismissed.current = true
-            localStorage.setItem('athena_save_code_shown', 'true')
+            localStorage.setItem('artemis_save_code_shown', 'true')
           }}
         />
       )}
@@ -295,10 +295,10 @@ export default function App() {
         phaseLabel={palette.displayName}
       />
       <div className="app__body">
-        <AthenaWidget
+        <ArtemisWidget
           currentEvent={currentEvent}
           currentLesson={currentLesson}
-          onEventHandled={handleAthenaEventHandled}
+          onEventHandled={handleArtemisEventHandled}
           badges={earnedBadges}
           currentApp={openApp}
           onOrbStateChange={setOrbState}
@@ -308,7 +308,7 @@ export default function App() {
             <ActiveSim
               key={openApp}
               onClose={handleCloseApp}
-              onAthenaEvent={handleAthenaEvent}
+              onArtemisEvent={handleArtemisEvent}
               simContext={simContext}
               onSimContext={handleSimContext}
               onOpenApp={handleOpenApp}

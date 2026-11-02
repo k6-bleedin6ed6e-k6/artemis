@@ -7,7 +7,7 @@ const PEERS = [
   { id: 'p2',  name: 'Maya T.',     emoji: '🌟', role: 'peer', muted: true  },
 ]
 
-export default function VideoCallSim({ onClose, onAthenaEvent }) {
+export default function VideoCallSim({ onClose, onArtemisEvent }) {
   const [muted,     setMuted]     = useState(false)
   const [cameraOn,  setCameraOn]  = useState(true)
   const [hand,      setHand]      = useState(false)
@@ -44,11 +44,11 @@ export default function VideoCallSim({ onClose, onAthenaEvent }) {
     if (firedRef.current.has(event)) return
     firedRef.current.add(event)
     setFiredSet(prev => { const n = new Set(prev); n.add(event); return n })
-    onAthenaEvent?.({ lesson: 'video-call', event })
+    onArtemisEvent?.({ lesson: 'video-call', event })
     const skills = ['muted-self', 'camera-off', 'raised-hand', 'sent-message']
     if (skills.filter(s => firedRef.current.has(s)).length >= 3 && !firedRef.current.has('lesson-complete')) {
       firedRef.current.add('lesson-complete')
-      setTimeout(() => onAthenaEvent?.({ lesson: 'video-call', event: 'lesson-complete' }), 600)
+      setTimeout(() => onArtemisEvent?.({ lesson: 'video-call', event: 'lesson-complete' }), 600)
     }
   }
 

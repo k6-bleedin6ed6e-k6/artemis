@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import useAthena from '../../utils/use-athena'
-import './athena-widget.css'
+import useArtemis from '../../utils/use-artemis'
+import './artemis-widget.css'
 
 const MAX_MESSAGES   = 20
 const FAIL_THRESHOLD = 3
@@ -24,11 +24,11 @@ function isDashboardCommand(text) {
   return /^\/dashboard(?:\s|$)/i.test(text)
 }
 
-const WELCOME_TEXT = "I'm Athena — I'm with you every step of the way. Click any lesson to get started, or ask me anything."
+const WELCOME_TEXT = "I'm Artemis — I'm with you every step of the way. Click any lesson to get started, or ask me anything."
 
 const WELCOME = {
   id: crypto.randomUUID(),
-  type: 'athena',
+  type: 'artemis',
   text: WELCOME_TEXT,
   timestamp: Date.now(),
 }
@@ -92,7 +92,7 @@ function addMsg(prev, msg) {
 }
 
 // orbState: 'idle' | 'thinking' | 'success' | 'struggling'
-export default function AthenaWidget({ currentEvent, currentLesson, onEventHandled, currentApp, onOrbStateChange }) {
+export default function ArtemisWidget({ currentEvent, currentLesson, onEventHandled, currentApp, onOrbStateChange }) {
   const [messages,   setMessages]   = useState([WELCOME])
   const [input,      setInput]      = useState('')
   const [isTyping,   setIsTyping]   = useState(false)
@@ -101,13 +101,13 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
   const [orbPos,     setOrbPos]     = useState(null)
   const [unread,     setUnread]     = useState(0)
   const [collapsed,  setCollapsed]  = useState(() => {
-    try { return localStorage.getItem('athena_panel_collapsed') === 'true' } catch { return false }
+    try { return localStorage.getItem('artemis_panel_collapsed') === 'true' } catch { return false }
   }) // null = CSS default bottom-right
   const bottomRef  = useRef(null)
   const inputRef   = useRef(null)
   const prevApp    = useRef(currentApp)
   const orbTimer   = useRef(null)
-  const { ask }    = useAthena()
+  const { ask }    = useArtemis()
 
   const handleOrbDrag = useCallback((e) => {
     if (e.button !== 0) return
@@ -140,7 +140,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
       prevApp.current = currentApp
       failCount.current = 0
       const text = currentApp ? (APP_GREETINGS[currentApp] ?? WELCOME_TEXT) : WELCOME_TEXT
-      setMessages([{ id: crypto.randomUUID(), type: 'athena', text, timestamp: Date.now() }])
+      setMessages([{ id: crypto.randomUUID(), type: 'artemis', text, timestamp: Date.now() }])
     }
   }, [currentApp])
 
@@ -186,7 +186,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
       setIsTyping(false)
       setOrbState('idle')
       setMessages(prev => addMsg(prev, {
-        id: crypto.randomUUID(), type: 'athena', text, timestamp: Date.now(),
+        id: crypto.randomUUID(), type: 'artemis', text, timestamp: Date.now(),
       }))
       setUnread(u => u + 1)
 
@@ -206,7 +206,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
     if (isDashboardCommand(text)) {
       const phrase = text.replace(/^\/dashboard\s*/i, '').trim()
       if (!phrase) {
-        setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'athena', text: 'Enter the instructor phrase after /dashboard. This command is only for authorized instructors.', timestamp: Date.now() }))
+        setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'artemis', text: 'Enter the instructor phrase after /dashboard. This command is only for authorized instructors.', timestamp: Date.now() }))
         return
       }
       const dashResult = await requestDashboardAccess(phrase)
@@ -218,7 +218,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
       // pick it up and scrub it from its own address bar immediately.
       setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'user', text: '••••••••', timestamp: Date.now() }))
       setMessages(prev => addMsg(prev, {
-        id: crypto.randomUUID(), type: 'athena',
+        id: crypto.randomUUID(), type: 'artemis',
         text: `🔒 unlocked — opening the dashboard in a new tab.`,
         timestamp: Date.now(),
       }))
@@ -226,7 +226,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
       return
       }
       setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'user', text: 'Instructor access requested', timestamp: Date.now() }))
-      setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'athena', text: 'Instructor access could not be verified. Check the phrase with your instructor.', timestamp: Date.now() }))
+      setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'artemis', text: 'Instructor access could not be verified. Check the phrase with your instructor.', timestamp: Date.now() }))
       return
     }
 
@@ -235,7 +235,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
     const response = await ask({ lesson: currentLesson ?? 'desktop-navigation', event: 'direct-question', context: text })
     setIsTyping(false)
     setOrbState('idle')
-    setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'athena', text: response, timestamp: Date.now() }))
+    setMessages(prev => addMsg(prev, { id: crypto.randomUUID(), type: 'artemis', text: response, timestamp: Date.now() }))
   }
 
   function handleKeyDown(e) {
@@ -251,7 +251,7 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
   function toggleCollapsed() {
     const next = !collapsed
     setCollapsed(next)
-    try { localStorage.setItem('athena_panel_collapsed', String(next)) } catch { /* storage is optional */ }
+    try { localStorage.setItem('artemis_panel_collapsed', String(next)) } catch { /* storage is optional */ }
   }
 
   return (
@@ -261,24 +261,24 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
         <div className="aw__header">
           {!collapsed && (
             <div className="aw__header-brand">
-              <span className="aw__header-name">Athena</span>
+              <span className="aw__header-name">Artemis</span>
               <span className={`aw__header-dot aw__header-dot--${orbState}`} />
             </div>
           )}
           {collapsed && <span className={`aw__header-dot aw__header-dot--${orbState}`} style={{ margin: '0 auto' }} />}
-          <button className="aw__action-btn aw__collapse-btn" onClick={toggleCollapsed} title={collapsed ? 'expand Athena' : 'collapse panel'}>
+          <button className="aw__action-btn aw__collapse-btn" onClick={toggleCollapsed} title={collapsed ? 'expand Artemis' : 'collapse panel'}>
             {collapsed ? '›' : '‹'}
           </button>
         </div>
 
-        {!collapsed && <div className="aw__messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Athena conversation">
+        {!collapsed && <div className="aw__messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Artemis conversation">
           {messages.map(msg => (
             <div key={msg.id} className={`aw__bubble aw__bubble--${msg.type}`}>
               {msg.text}
             </div>
           ))}
           {isTyping && (
-            <div className="aw__bubble aw__bubble--athena">
+            <div className="aw__bubble aw__bubble--artemis">
               <span className="aw__typing"><span /><span /><span /></span>
             </div>
           )}
@@ -291,13 +291,13 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
             <input
               ref={inputRef}
               className="aw__input"
-              placeholder="ask Athena anything…"
+              placeholder="ask Artemis anything…"
               value={input}
               onChange={e => setInput(e.target.value.slice(0, 500))}
               onKeyDown={handleKeyDown}
               maxLength={500}
               disabled={isTyping}
-              aria-label="Message Athena. Questions are processed by an external AI tutor provider."
+              aria-label="Message Artemis. Questions are processed by an external AI tutor provider."
             />
             <button className="aw__send" onClick={handleSend} disabled={isTyping || !input.trim()} aria-label="send">→</button>
           </div>
@@ -311,8 +311,8 @@ export default function AthenaWidget({ currentEvent, currentLesson, onEventHandl
           style={orbPos ? { left: orbPos.left, top: orbPos.top, bottom: 'auto', right: 'auto' } : {}}
           onClick={focusInput}
           onMouseDown={handleOrbDrag}
-          title="Athena"
-          aria-label="Athena"
+          title="Artemis"
+          aria-label="Artemis"
         >
           <div className="aw__orb-sphere">
             <span className="aw__orb-owl">🦉</span>

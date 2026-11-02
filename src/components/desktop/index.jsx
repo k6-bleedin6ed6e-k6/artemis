@@ -286,9 +286,9 @@ export default function Desktop({
     <div className="desktop">
       <div className="desktop__content">
         <header className="desktop__studio">
-          <img src="/images/athena-workbench.webp" alt="" aria-hidden="true" />
+          <img src="/images/artemis-workbench.webp" alt="" aria-hidden="true" />
           <div className="desktop__studio-copy">
-            <span>ATHENA · LEARNING STUDIO</span>
+            <span>ARTEMIS · LEARNING STUDIO</span>
             <h1>Learn by doing.</h1>
           </div>
           <span className="desktop__studio-mark" aria-hidden="true">A</span>
@@ -298,7 +298,7 @@ export default function Desktop({
           <div className="desktop__finished">
             <span className="desktop__finished-icon">🏆</span>
             <div className="desktop__finished-text">
-              <strong>You finished Athena.</strong> All 13 lessons complete.
+              <strong>You finished Artemis.</strong> All 13 lessons complete.
             </div>
             <a className="desktop__finished-link" href="https://py-bite.kwasikontor.dev" target="_blank" rel="noopener noreferrer">
               continue at py-bite →

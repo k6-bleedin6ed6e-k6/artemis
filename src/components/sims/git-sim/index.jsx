@@ -10,8 +10,8 @@ import { playChime } from '../../../utils/sound'
 import { runPython } from '../../../utils/pyodide-runner'
 import './git-sim.css'
 
-const LESSON_PROMPT  = 'learner@athena:~/my-project'
-const GIT_STORAGE_KEY = 'athena_git_session'
+const LESSON_PROMPT  = 'learner@artemis:~/my-project'
+const GIT_STORAGE_KEY = 'artemis_git_session'
 
 function loadGitSession(lesson) {
   try {
@@ -316,7 +316,7 @@ function SandboxTerminal({ lessonGitState }) {
     setHistory(prev => [...prev, { prompt, cmd, lines }])
   }
 
-  function prompt_str() { return `learner@athena:${cwd}` }
+  function prompt_str() { return `learner@artemis:${cwd}` }
 
   // ── Editor callbacks ────────────────────────────────────────────────────────
   function handleEditorSave(filename, newContent) {
@@ -337,7 +337,7 @@ function SandboxTerminal({ lessonGitState }) {
       }
     })
     setHistory(prev => [...prev, {
-      prompt: `learner@athena:${cwd}`,
+      prompt: `learner@artemis:${cwd}`,
       cmd: `(${editorOpen.type}: saved ${filename})`,
       lines: [L(`"${filename}" written`, 'dim')],
     }])
@@ -346,7 +346,7 @@ function SandboxTerminal({ lessonGitState }) {
 
   function handleEditorCancel() {
     setHistory(prev => [...prev, {
-      prompt: `learner@athena:${cwd}`,
+      prompt: `learner@artemis:${cwd}`,
       cmd: `(${editorOpen?.type}: quit without saving)`,
       lines: [],
     }])
@@ -856,7 +856,7 @@ function SandboxTerminal({ lessonGitState }) {
 }
 
 // ─── Main sim ─────────────────────────────────────────────────────────────────
-export default function GitSim({ onClose, onAthenaEvent, simContext }) {
+export default function GitSim({ onClose, onArtemisEvent, simContext }) {
   // Detect script from simContext (same session) or saved gitState (page reload)
   const scriptName = simContext?.pythonScript?.name || (() => {
     try {
@@ -939,7 +939,7 @@ export default function GitSim({ onClose, onAthenaEvent, simContext }) {
     const key = `${event}:${stepIndex}`
     if (firedRef.current.has(key)) return
     firedRef.current.add(key)
-    onAthenaEvent?.({ lesson: 'git-basics', event, context })
+    onArtemisEvent?.({ lesson: 'git-basics', event, context })
   }
 
   useEffect(() => { fire('git-opened') }, [])
